@@ -1,0 +1,23 @@
+Purpose of this project is to make a framework through which other password generators can be made and then using it to make a password generator for personal and professional use for the Helpdesk team at Galls LLC.
+
+It should first be able to be ran in the command line of either windows CMD or Linux CLI using python.
+
+Flags can be added to the command to specify which password needs to be generated or to increase or decrease the complexity.
+
+1). Make a few dictionairies to pull from
+    a). Letter Bank in a QWERTY matrix
+    b). Word Bank
+    c). Work Specific word bank
+    d). number generators 
+
+2). Create a standard "Temp" password creator
+    a). Include GALLS/Proud/Serve/Pariot/Fadden
+    b). include 6 random digits
+    c). include a random word
+    d). seperate each ection with a hyphen " - "
+
+3). Create a permanent password gen for GQ
+    a). Total 10 characters
+    b). 2 alpha 3 digit 3 alpha 2 digit
+
+4). Create a random 12 character password for windows/etc
