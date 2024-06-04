@@ -10,6 +10,15 @@ w = open('words_alpha.txt', 'r')
 words = w.read()
 words_list = words.splitlines()
 
+sc = open("char_random.txt", "r")
+specchars = sc.read()
+special_characters = specchars.splitlines()
+
+gw = open("galls_words.txt", "r")
+gallswords = gw.read()
+galls_words = gallswords.splitlines() 
+
+
 # selection = random.randint(0, len(words_list))
 # print(words_list)
 # print(selection)
@@ -35,11 +44,24 @@ def generateword(Length_word):
         gen_word = generateword(Length_word)
     return gen_word
 
+#Generate a 12 character password as a temp 
+#
+def windowspassword():
+    word_one = random.randint(4, 6)
+    word_two = random.randint(4, 6)
+    numbers_one = random.randint(2, 4)
+    char_special = random.randint(0, len(special_characters))
+    if random.randint(0, 1) == 1:
+        password = generateword(word_one).upper() + " " + generateword(word_two).lower() + numberstring(numbers_one) + special_characters[char_special]
+    else:
+        password = generateword(word_one).lower() + " " + generateword(word_two).upper() + numberstring(numbers_one) + special_characters[char_special]
+
+    return password
 
 
-test = input("Test command: ")
+#test = input("Test command: ")
 
-print(generateword(test))
+print(windowspassword())
 
 
         
