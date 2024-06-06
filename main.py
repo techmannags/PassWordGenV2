@@ -40,7 +40,7 @@ def numberstring(length_number):
 #using all words
 def generateword(Length_word):
     gen_word = galls_words[random.randint(0, len(galls_words)-1)]
-    if len(gen_word) > int(Length_word):
+    if len(gen_word) != int(Length_word):
         gen_word = generateword(Length_word)
     return gen_word
 
@@ -58,11 +58,19 @@ def windowspassword():
 
     return password
 
+def gqpassword():
+    numb_char = random.randint(2, 5)
+    word_use = 10 - numb_char
+    password = generateword(word_use).upper() + numberstring(numb_char)
+    return password
+
 state = True
 while state == True:
     test = input("Test command: ")
     if test == "":
         print(windowspassword())
+    elif test.lower() == "gq":
+        print(gqpassword())
     else:
         state = False
 
