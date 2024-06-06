@@ -39,7 +39,7 @@ def numberstring(length_number):
 #Generates a random word based of word length requirement
 #using all words
 def generateword(Length_word):
-    gen_word = words_list[random.randint(0, len(words_list))]
+    gen_word = galls_words[random.randint(0, len(galls_words)-1)]
     if len(gen_word) > int(Length_word):
         gen_word = generateword(Length_word)
     return gen_word
@@ -47,10 +47,10 @@ def generateword(Length_word):
 #Generate a 12 character password as a temp 
 #
 def windowspassword():
-    word_one = random.randint(4, 6)
-    word_two = random.randint(4, 6)
+    word_one = random.randint(4, 8)
+    word_two = random.randint(4, 8)
     numbers_one = random.randint(2, 4)
-    char_special = random.randint(0, len(special_characters))
+    char_special = random.randint(0, len(special_characters)-1)
     if random.randint(0, 1) == 1:
         password = generateword(word_one).upper() + " " + generateword(word_two).lower() + numberstring(numbers_one) + special_characters[char_special]
     else:
@@ -58,10 +58,14 @@ def windowspassword():
 
     return password
 
+state = True
+while state == True:
+    test = input("Test command: ")
+    if test == "":
+        print(windowspassword())
+    else:
+        state = False
 
-#test = input("Test command: ")
-
-print(windowspassword())
 
 
         
